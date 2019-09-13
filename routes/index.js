@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const uploads = require("./api/uploads");
+const api = require("./api/");
 
 const router = Router();
 
@@ -7,6 +7,6 @@ router.get("/", (req, res) => {
   res.send("<h1>Welcome to file upload app</h1>");
 });
 
-router.use("/api/uploads/", uploads);
+router.use("/api/", api);
 
 module.exports = router;
