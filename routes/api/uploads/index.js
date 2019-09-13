@@ -8,6 +8,6 @@ const multer = require("../../../middleware/multer");
 
 const router = Router();
 
-router.post("/", multer.array("files", 5), store).delete("/:id", _delete);
+router.post("/", multer.array("files", 5), store);
 
 module.exports = router;
