@@ -1,4 +1,5 @@
 const express = require("express");
+const { PORT } = require("./config.json");
 
 const app = express();
 
@@ -21,8 +22,6 @@ app.use("/", routes);
   const connection = await require("./db")();
 
   if (!connection) return console.error("[db] Cannot establish connection.");
-
-  const PORT = 8081;
 
   app.listen(PORT, () => console.log(`Connected on http://localhost:${PORT}`));
 })();
