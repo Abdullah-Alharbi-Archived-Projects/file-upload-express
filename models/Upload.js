@@ -15,6 +15,9 @@ const uploadsSchema = new Schema(
       trim: true,
       lowercase: true
     },
+    url: {
+      type: String
+    },
     expire: {
       type: Number,
       default: EXPIRE
