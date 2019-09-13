@@ -13,6 +13,15 @@ app
   .use(helmet())
   .use(morgan("dev"));
 
+// uploads route
+const options = {
+  dotfiles: "ignore",
+  etag: false,
+  index: false,
+  redirect: false
+};
+app.use("/uploads/", express.static("uploads", options));
+
 // routes
 const routes = require("./routes/"); // this will point to index.js
 
